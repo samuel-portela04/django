@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<div class="col-md-5">
+    <h2>Login</h2>
+    <form method="POST">{% csrf_token %}
+
+        <div class="mb-1">
+            <label class="form-label" for="id_username" style="font-size: 24px;">Usuário:</label>
+            <input type="text" name="username" class="form-control">       
+        </div> 
+        <div class="mb-4">
+            <label class="form-label" for="id_password" style="font-size: 24px;">Senha:</label>
+            <input type="password" name="password" class="form-control">
+    <a href="{% url 'password_reset' %}" style="font-size: 22px;">Esqueci minha senha</a>
+        </div>
+        <center>
+        <button class="login-button w-50 py-2" type="submit" style="font-size: 22px; border-color:darkblue">Entrar</button>
+        </center>
+    </form>
+</div>
+
+
+{% endblock %}

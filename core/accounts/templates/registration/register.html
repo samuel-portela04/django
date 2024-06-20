@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Registrar{% endblock %}
+
+{% block content %} 
+<div class="mb-1"style="font-size: 24px; width: 30vw; height: 75vh;" >
+    <h2>Criar uma conta</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <center>
+        <button class="register-button w-50 py-2" type="submit" style="font-size: 22px; border-color:darkblue"type="submit">Registrar</button>
+        </center>
+    </form>
+</div>
+{% endblock %}
